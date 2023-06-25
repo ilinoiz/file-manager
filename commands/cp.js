@@ -11,5 +11,6 @@ export const cpCommand = async (args) => {
   const readStream = fs.createReadStream(filePath);
   const newPath = path.join(newPathFolder, path.basename(filePath));
   const writeStream = fs.createWriteStream(newPath);
+
   await pipeline(readStream, writeStream);
 };
