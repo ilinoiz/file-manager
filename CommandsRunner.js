@@ -1,3 +1,4 @@
+import { exitCommand } from "./commands/exit.js";
 import { Command } from "./Command.js";
 import { upCommand } from "./commands/up.js";
 import { lsCommand } from "./commands/ls.js";
@@ -35,7 +36,7 @@ export class CommandsRunner {
   };
 
   parseInput = (input) => {
-    const result = input.split(" ");
+    const result = input.split(/\s+/);
     const command = new Command(result[0], result.slice(1));
     return command;
   };
